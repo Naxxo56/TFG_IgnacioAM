@@ -1,0 +1,219 @@
+<div *ngIf="noPagado">
+  <label id="label">Elija metodo de pago</label>
+  <select [(ngModel)]="metodoPagoElegido" class="form-select" id="eleccion">
+    <option *ngFor="let item of metodosPago">
+      {{ item }}
+    </option>
+  </select>
+  <button
+    id="botonVolvere"
+    class="btn btn-primary"
+    [routerLink]="['/carrito']"
+    routerLinkActive="router-link-active"
+  >
+    Volver al carrito
+  </button>
+
+  <div id="visarow" *ngIf="metodoPagoElegido == metodosPago[0]">
+    <div class="form-container">
+      <h2>VISA</h2>
+      <form [formGroup]="contactForm">
+        <label>Nombre del titular:</label
+        ><input
+          type="text"
+          formControlName="nombre"
+          placeholder=" nombre"
+          required
+        />
+        <div
+          class="alert alert-danger"
+          *ngIf="nombre.invalid && (nombre.dirty || nombre.touched)"
+        >
+          <div class="container-error-message" *ngIf="nombre.errors.required">
+            Campo obligatorio
+          </div>
+          <div class="container-error-message" *ngIf="nombre.errors.minlength">
+            El nombre como minimo tiene que tener 15 caracteres
+          </div>
+        </div>
+        <label>Fecha de caducidad:</label><br /><input
+          type="date"
+          formControlName="fecha"
+        />
+        <div
+          class="alert alert-danger" id="alertaTodosTop"
+          *ngIf="fecha.invalid && (fecha.dirty || fecha.touched)"
+        >
+          <div class="container-error-message" *ngIf="fecha.errors.required">
+            Campo obligatorio
+          </div>
+        </div>
+        <div id="ccvVisaTop"> 
+        <label>Numero de la tarjeta:</label
+        ><input
+          (keypress)="numberOnly($event)"
+          type="text"
+          formControlName="numero"
+          placeholder=" numero tarjeta"
+        />
+        <div
+          class="alert alert-danger"
+          *ngIf="numero.invalid && (numero.dirty || numero.touched)"
+        >
+          <div class="container-error-message" *ngIf="numero.errors.required">
+            Campo obligatorio
+          </div>
+          <div
+            class="container-error-message"
+            *ngIf="numero.errors.minlength || numero.errors.maxlength"
+          >
+            El numero de la tarjeta debe contener 16 digitos
+          </div>
+        </div>
+      </div>
+        <label>CCV:</label><br /><input
+          maxlength="3"
+          (keypress)="numberOnly($event)"
+          type="password"
+          formControlName="ccv"
+          placeholder=" CCV"
+        />
+        <div
+          class="alert alert-danger" id="alertaTodosTop"
+          *ngIf="ccv.invalid && (ccv.dirty || ccv.touched)"
+        >
+          <div class="container-error-message" *ngIf="ccv.errors.required">
+            Campo obligatorio
+          </div>
+          <div
+            class="container-error-message"
+            *ngIf="ccv.errors.maxlength || ccv.errors.minlength"
+          >
+            El ccv debe contener solo 3 digitos
+          </div>
+        </div>
+        <button
+          (click)="pagarDef()"
+          type="submit"
+          class="btn-send"
+          [disabled]="!contactForm.valid"
+        >
+          Pagar
+        </button>
+        <button
+          id="botonVolver"
+          class="btn-send"
+          [routerLink]="['/carrito']"
+          routerLinkActive="router-link-active"
+        >
+          Volver al carrito
+        </button>
+      </form>
+    </div>
+  </div>
+  
+  <div id="paypalrow" *ngIf="metodoPagoElegido == metodosPago[1]">
+    <div class="form-container">
+      <h2>PAYPAL</h2>
+      <form [formGroup]="contactFormPayPal">
+        <label>Numero de PayPal:</label
+          ><input
+            (keypress)="numberOnly($event)"
+            type="text"
+            formControlName="numeroPayPal"
+            placeholder=" numero paypal"
+          />
+          <div
+            class="alert alert-danger"
+            *ngIf="numeroPayPal.invalid && (numeroPayPal.dirty || numeroPayPal.touched)"
+          >
+            <div class="container-error-message" *ngIf="numeroPayPal.errors.required">
+              Campo obligatorio
+            </div>
+            <div
+              class="container-error-message"
+              *ngIf="numeroPayPal.errors.minlength || numeroPayPal.errors.maxlength"
+            >
+              El numero de la tarjeta debe contener 16 digitos
+            </div>
+          </div>
+        <label>Fecha de caducidad:</label><br/><input
+          type="date"
+          formControlName="fechaPayPal"
+        /> <br>
+        <div
+          class="alert alert-danger" id="alertaTodosTop"
+          *ngIf="fechaPayPal.invalid && (fechaPayPal.dirty || fechaPayPal.touched)"
+        >
+          <div class="container-error-message" *ngIf="fechaPayPal.errors.required">
+            Campo obligatorio
+          </div>
+        </div>
+        <div id="ccvPayPalTop"> 
+        <label>CCV:</label><br/><input
+          (keypress)="numberOnly($event)"
+          type="password"
+          formControlName="ccvPayPal"
+          placeholder=" CCV"
+          maxlength="3"
+        /><br>
+        <div
+          class="alert alert-danger" id="alertaTodosTop"
+          *ngIf="ccvPayPal.invalid && (ccvPayPal.dirty || ccvPayPal.touched)"
+        >
+          <div class="container-error-message" *ngIf="ccvPayPal.errors.required">
+            Campo obligatorio
+          </div>
+          <div
+            class="container-error-message"
+            *ngIf="ccvPayPal.errors.maxlength || ccvPayPal.errors.minlength"
+          >
+            El ccv debe contener solo 3 digitos
+          </div>
+        </div>
+      </div>
+        <button (click)="pagarDef()" type="submit" class="btn-send"[disabled]="!contactFormPayPal.valid">
+          Pagar
+        </button>
+        <button
+          id="botonVolver"
+          class="btn-send"
+          [routerLink]="['/carrito']"
+          routerLinkActive="router-link-active"
+        >
+          Volver al carrito
+        </button>
+      </form>
+    </div>
+  </div>
+
+</div>
+
+<div id="pagado" *ngIf="!noPagado">
+  <br>
+  <div class="row">
+  <h2 style="color:limegreen;font-size: 40px;">PAGADO</h2>
+  <h2 style="color: white">
+    El envio se enviará a esta direccion: {{ direccion }},gracias por confiar en nosotros.
+  </h2>
+    <h2 style="color: white">¿Desea un ticket de su compra?</h2>
+    <button   id="centrarSalir" (click)="generarPDF()" type="submit" style="height:15%; width: 15%;" class="btn btn-primary">
+      Generar ticket de compra
+    </button>
+    <br>
+    <br>
+    <h2 style="color: white;">Para volver al menu principal pulse al aqui</h2>
+    <button
+      style="height:15%; width: 15%;"
+      id="centrarSalir"
+      (click)="borrar()"
+      [routerLink]="['/home']"
+      routerLinkActive="active"
+      class="btn btn-primary">
+      Volver al menu principal
+    </button>
+    <div class="col" id="imagen_pagado">
+      <img id="imagen_pagado" src="src\assets\images\pagadoporfin.webp" alt="imagen_pagado">   
+    </div>
+  </div>
+</div>

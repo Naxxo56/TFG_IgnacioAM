@@ -1,0 +1,90 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light background" id="navBar">
+  <a id="tituloNav" class="navbar-brand">New Sony</a>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a
+          id="nombretitulosnav"
+          class="nav-link"
+          [routerLink]="['/home']"
+          routerLinkActive="active"
+          >Home</a
+        >
+      </li>
+      <li class="nav-item">
+        <a
+          id="nombretitulosnav"
+          class="nav-link"
+          [routerLink]="['/consolas']"
+          routerLinkActive="active"
+          >Consolas</a
+        >
+      </li>
+      <li class="nav-item">
+        <a
+          id="nombretitulosnav"
+          class="nav-link"
+          [routerLink]="['/videojuegos']"
+          routerLinkActive="active"
+          >Videojuegos</a
+        >
+      </li>
+      <li class="nav-item">
+        <a
+          id="nombretitulosnav"
+          class="nav-link"
+          [routerLink]="['/perifericos']"
+          routerLinkActive="active"
+          >Periféricos</a
+        >
+      </li>
+      <li class="nav-item">
+        <a
+          id="nombretitulosnav"
+          class="nav-link"
+          [routerLink]="['/moviles']"
+          routerLinkActive="active"
+          >Móviles</a
+        >
+      </li>
+      <li *ngIf="bandera" class="nav-item">
+        <a
+          id="nombretitulosnav"
+          class="nav-link"
+          [routerLink]="['/anadir']"
+          routerLinkActive="active"
+          >Añadir productos</a
+        >
+      </li>
+    </ul>
+  </div>
+  <ul class="navbar-nav mr-auto">
+    <li class="nav-item">
+      <div class="row">
+        <div class="col">
+          <a
+            class="nav-link"
+            [routerLink]="['/carrito']"
+            routerLinkActive="active"
+            ><img
+              id="imagen-carrito"
+              alt="Carrito Imagen"
+              src="assets/images/carrito.png"
+          /></a>
+          <span
+            style="color: white; background: green"
+            id="contador_carrito"
+            class="badge bg-primary rounded-pill"
+            >{{ contadorCarrito.length }}</span
+          >
+          <!--Array que funciona en los todos los productos Components -->
+        </div>
+        <div class="col" id="cerrar">
+          <a id="cerrarSesion" class="navbar-brand" href="#">Cerrar sesión</a>
+          <br>
+          <div id="usuarioSign"><i>{{usuario}}</i></div>
+        </div>      
+      </div>
+    </li>
+  </ul>
+</nav>

@@ -1,0 +1,36 @@
+#botoneslogin1{
+    margin-top: 15px;
+}
+#botoneslogin2{
+    margin-top: 15px;
+}
+#contenedorLogin{
+    text-align: center;
+    align-items: center;
+}
+#iniciar{
+    margin-top: 30px;
+}
+#login{
+color: white;
+}
+#center{
+    align-items: center;
+    image-orientation: initial;
+    margin-left: 38%;
+    margin-top:  60px;
+}
+#inputlogin1{
+    align-content: center;
+    align-items: center;
+    width: 23%;
+}
+#inputlogin2{
+    align-content: center;
+    align-items: center;
+    width: 23%;
+    margin-top: 10px;
+}
+#toop{
+    margin-top:50px;
+}

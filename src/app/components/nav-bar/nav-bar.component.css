@@ -1,0 +1,39 @@
+#imagen-carrito{
+    height: 40px;
+    margin-top: 2px;
+    margin-right: 17px;
+}
+#contadorCarrito{
+    margin-left: 8%;
+    margin-bottom: 5px;
+}
+#tituloNav{
+    margin-left: 10px;
+    color:midnightblue;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+#cerrarSesion{
+    margin-top: 25px;
+    font-size: 18px;
+    color: black;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.background{
+    background-color:powderblue !important;
+}
+#nombretitulosnav{
+    text-anchor: middle;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+#navBar{
+    width: 100%;
+    height:8.5%;
+}
+#usuarioSign{
+    margin-top: 20px i !important;
+    font-size: 5px i !important;
+}
+#cerrar{
+    margin-top: 30px;
+}

@@ -1,0 +1,154 @@
+<div class="row">
+  <h2 id="cabecera">Seleccione el producto que va a registrar</h2>
+  <div class="col"></div>
+  <div class="col" id="spinner">
+    <select [(ngModel)]="seleccion" class="form-select">
+      <!--Creacion del select junto al NGMODEL que le asignamos la variable seleccion creada en el TS para saber el valor del <option>-->
+      <option *ngFor="let item of datos">
+        <!-- Recorremos la variable datos creada en el TS con todos los valores de los productos para que se creen tantos <option> como valores tenga "DATOS"-->
+        {{ item }}
+      </option>
+    </select>
+  </div>
+  <div class="col"></div>
+</div>
+
+<div id="blanco" *ngIf="seleccion == datos[0]">
+  <!--Aqui hacemos un if que si seleccion tiene valor de datos[0](consola,dato sacado del array por la posicion en el que se encuentran)
+  se iniciara todo el formulario enfocado a consola y asi con el resto de productos -->
+<div class="row" >
+    <div class="col">
+      <h3>Introduzca nombre <label id="label">*</label></h3>
+      <input [(ngModel)]="nombre" type="text" value=" " />
+      <!--Este ngModel es una variable que cogera el valor del input para añadirlo a la creacion del objeto consola o el que sea-->
+    </div>
+    <div class="col">
+      <h3>Introduzca URL de imagen</h3>
+      <input type="text" [(ngModel)]="imagen" value=" " />
+    </div>
+    <div class="col">
+      <h3>Introduzca descripcion del producto <label id="label">*</label></h3>
+      <input type="text" [(ngModel)]="descripcion" value=" " />
+    </div>
+    
+</div>
+<div class="row">
+    <div class="col" id="marginTop">
+      <h3>Introduzca el precio <label id="label">*</label></h3>
+      <input type="text" [(ngModel)]="precio" (keypress)="numberOnly($event)" />
+    </div>
+    <div class="col"></div>
+    <div class="col" id="marginTop">
+      <h3>Introduzca la capacidad de almacenamiento <label id="label">*</label></h3>
+      <input type="text" [(ngModel)]="capacidad" (keypress)="numberOnly($event)" />
+    </div>  
+  </div>
+  <button id="botonAgregar" class="btn btn-primary" (click)="anadirConsola()">
+    Agregar producto
+  </button>
+  <!--Boton con funcionalidad explicada en el ts -->
+</div>
+<div id="blanco" *ngIf="seleccion == datos[1]">
+  <!--Aqui hacemos un if que si seleccion tiene valor de datos[0](consola,dato sacado del array por la posicion en el que se encuentran)
+  se iniciara todo el formulario enfocado a consola y asi con el resto de productos -->
+<div class="row" >
+    <div class="col">
+      <h3>Introduzca nombre <label id="label">*</label></h3>
+      <input [(ngModel)]="nombre" type="text" value=" "  />
+      <!--Este ngModel es una variable que cogera el valor del input para añadirlo a la creacion del objeto consola o el que sea-->
+    </div>
+    <div class="col">
+      <h3>Introduzca URL de imagen</h3>
+      <input type="text" [(ngModel)]="imagen" value=" " />
+    </div>
+    <div class="col">
+      <h3>Introduzca descripcion del producto <label id="label">*</label></h3>
+      <input type="text" [(ngModel)]="descripcion" value=" " />
+    </div>
+    </div>
+    <div class="row">
+    <div class="col" id="marginTop">
+      <h3>Introduzca el precio <label id="label">*</label></h3>
+      <input type="text" [(ngModel)]="precio"   (keypress)="numberOnly($event)"/>
+    </div>
+    <div class="col">
+
+    </div>
+    <div class="col" id="marginTop">
+      <h3>Introduzca el tiempo medio de juego <label id="label">*</label></h3>
+      <input type="text" [(ngModel)]="tiempoJuego"  (keypress)="numberOnly($event)"/>
+    </div>
+  </div>
+  <button id="botonAgregar" class="btn btn-primary" (click)="agregarVideojuego()">
+    Agregar producto
+  </button>
+  <!--Boton con funcionalidad explicada en el ts -->
+</div>
+<div id="blanco" *ngIf="seleccion == datos[2]">
+  <!--Aqui hacemos un if que si seleccion tiene valor de datos[0](consola,dato sacado del array por la posicion en el que se encuentran)
+   se iniciara todo el formulario enfocado a consola y asi con el resto de productos -->
+<div class="row" >
+    <div class="col">
+      <h3>Introduzca nombre <label id="label">*</label></h3>
+      <input [(ngModel)]="nombre" type="text" />
+      <!--Este ngModel es una variable que cogera el valor del input para añadirlo a la creacion del objeto consola o el que sea-->
+    </div>
+    <div class="col">
+      <h3>Introduzca URL de imagen</h3>
+      <input type="text" [(ngModel)]="imagen" />
+    </div>
+    <div class="col">
+      <h3>Introduzca descripcion del producto <label id="label">*</label></h3>
+      <input type="text" [(ngModel)]="descripcion" />
+    </div>
+    </div>
+    <div class="row">
+    <div class="col" id="marginTop">
+      <h3>Introduzca el precio <label id="label">*</label></h3>
+      <input type="text" [(ngModel)]="precio"  (keypress)="numberOnly($event)" />
+    </div>
+  </div>
+  <button id="botonAgregar" class="btn btn-primary" (click)="agregarPeriferico()">
+    Agregar producto
+  </button>
+<!--Boton con funcionalidad explicada en el ts -->
+</div>
+<div id="blanco" *ngIf="seleccion == datos[3]">
+
+<!--Aqui hacemos un if que si seleccion tiene valor de datos[0](consola,dato sacado del array por la posicion en el que se encuentran)
+se iniciara todo el formulario enfocado a consola y asi con el resto de productos -->
+
+<div class="row" >
+    <div class="col">
+      <h3>Introduzca nombre <label id="label">*</label></h3>
+      <input [(ngModel)]="nombre" type="text" />
+<!--Este ngModel es una variable que cogera el valor del input para añadirlo a la creacion del objeto consola o el que sea-->
+    </div>
+    <div class="col">
+      <h3>Introduzca URL de imagen</h3>
+      <input type="text" [(ngModel)]="imagen" />
+    </div>
+    <div class="col">
+      <h3>Introduzca descripcion del producto <label id="label">*</label></h3>
+      <input type="text" [(ngModel)]="descripcion" />
+    </div>
+    </div>
+    <div class="row">
+    <div class="col" id="marginTop">
+      <h3>Introduzca el precio <label id="label">*</label></h3>
+      <input type="text" [(ngModel)]="precio"  (keypress)="numberOnly($event)" />
+    </div>
+    <div class="col" id="marginTop">
+      <h3>Introduzca la capacidad de almacenamiento <label id="label">*</label></h3>
+      <input type="text" [(ngModel)]="capacidad"  (keypress)="numberOnly($event)" />
+    </div>
+    <div class="col" id="marginTop">
+      <h3>Introduzca los pixeles del movil <label id="label">*</label></h3>
+      <input type="text" [(ngModel)]="pixeles"  (keypress)="numberOnly($event)" />
+    </div>
+  </div>
+  <button id="botonAgregar" class="btn btn-primary" (click)="agregarMovil()">
+    Agregar producto
+  </button>
+  <!--Boton con funcionalidad explicada en el ts -->
+</div>

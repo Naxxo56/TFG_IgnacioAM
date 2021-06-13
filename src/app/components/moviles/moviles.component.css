@@ -1,0 +1,42 @@
+#imagen{
+    background-position: inherit;
+    background-size: inherit;
+    background-attachment: inherit;
+}
+#rowVideojuegos{
+    align-items: center;
+    margin-top: 16px;
+    background-size: auto;
+    background-attachment: fixed;
+    margin-left: 5%;
+    margin-right: 4%;
+}
+#botonFiltrar{
+    margin-top: 31px !important;
+    height: 40px;
+    width: 85px;
+}
+#filtrarVidejuegos{
+    margin-top: 25px !important;
+}
+#centrarInput{
+   margin-left: 30%;
+   font-family: sans-serif;
+   font-size: 20px;
+   color: white;
+}
+#alertNohay{
+    margin-top: 10px !important;
+}
+#nombrePro{
+    margin-top: 15px;
+    margin-left: 30px;
+    font-weight: bold;
+}
+#precioPro{
+    margin-left: 14px;
+}
+#descripcionPro{
+  margin-top: 10px;
+  margin-right: 20px;
+}

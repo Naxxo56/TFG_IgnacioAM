@@ -1,0 +1,77 @@
+#titulo_pagina_principal {
+  color: black;
+  text-align: center;
+}
+#bienvenidos{
+  font-size: 40px;
+  margin-top: 30%;
+  font-family:Verdana, Geneva, Tahoma, sans-serif; 
+  color: white;
+}
+#quienes{
+  font-size: 40px;
+  margin-top: 5%;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+  "Lucida Sans", Arial,sans-serif;
+  color:white;
+}
+#imagen_central {
+  align-items: center;
+  text-align: center;
+}
+section {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  height: 1080px;
+  margin: 0 auto;
+  width: 1920px;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+#wrapper {
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.8);
+  margin: 0 auto;
+  max-width: 1440px;
+  width: 100%;
+}
+#seccion_titulo_principal {
+  color: white;
+  text-align: center;
+  background-image: url("src\assets\images\fondo2.jpg");
+}
+#seccion_presentacion {
+  background-image: url("src\assets\images\pantalladoss.jpg");
+  text-align: center;
+  color: white;
+}
+#seccion_consolas {
+  text-align: center;
+  background-image: url("src\assets\images\fondo2.jpg");
+  color: white;
+}
+#seccion_vendemos {
+  text-align: center;
+  background-image: url("src\assets\images\fondo4.jpg");
+  color: white;
+}
+#seccion_videojuegos {
+  background-image: url("src\assets\images\pantalladoss.jpg");
+  text-align: center;
+  color: white;
+}
+#seccion_perifericos {
+  background-image: url("src\assets\images\fondo2.jpg");
+  text-align: center;
+  color: white;
+}
+#seccion_moviles {
+  background-image: url("src\assets\images\fondo4.jpg");
+  text-align: center;
+  color: white;
+}
+.quevendemos{
+  margin-top: 15%;
+}
+

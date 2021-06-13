@@ -1,0 +1,54 @@
+<div class="row" id="total">
+  <div id="colum1" class="col">
+    <div id="topmapa">    
+      <b id="localizacion"> Su localizacion es : {{ latLongFinalMostrar }} </b>
+    </div>
+    <div id="mapa"></div>
+    <!--Este id lo que hace es identificar en que bloque va a estar situado el MAPA -->
+    <br />
+    <br />
+    <!--variable del TS explicada ahi-->
+  </div>
+  <div id="colum2" class="col">
+    <h2 id="resumenPedidoTexto">
+      <u><b>Resumen del pedido:</b></u>
+    </h2>
+    <table id="resumenCarrito" class="table">
+      <thead>
+        <tr>
+          <th scope="col">Nombre</th>
+          <th scope="col">Precio</th>
+          <th scope="col">Imagen del producto</th>
+        </tr>
+      </thead>
+      <tbody *ngFor="let item of listaNueva">
+        <tr *ngFor="let itemF of item">
+          <td>{{ itemF.nombre }}</td>
+          <td>{{ itemF.precio }} €</td>
+          <td>
+            <img [src]="itemF.imagen" style="height: 10rem; width: 10rem" />
+          </td>
+          <td>
+            <button
+              (click)="eliminarProducto(itemF.id)"
+              id="eliminar"
+              class="btn-danger"
+            >
+              Eliminar producto
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <b id="textoFinal">PrecioFinal:</b>
+    <b id="precioFinal"> {{ precioFinal }}€</b>
+    <button
+      (click)="vacio()"
+      class="btn btn-success"
+      style="width: 42%"
+      id="boton_pagar"
+    >
+      Finalizar Compra
+    </button>
+  </div>
+</div>

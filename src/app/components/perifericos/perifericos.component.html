@@ -1,0 +1,44 @@
+<div class="row" id="filtrarVidejuegos">
+  <div class="col"></div>
+  <div class="col">
+    <p id="centrarInput">Introduzca Nombre</p>  
+<input type="text" class="form-control position-relative"  placeholder="Introduce el nombre del periferico" #inputNombre>
+  </div>
+  <div class="col">
+    <p id="centrarInput">Introduzca Precio</p>  
+<input type="text" class="form-control position-relative"  placeholder="Introduce el precio del periferico" #inputPrecio>
+  </div>
+ <div class="col">
+   <button class="btn btn-primary" id="botonFiltrar" (click)="filtrarPeriferico(inputNombre.value,inputPrecio.value)">Buscar</button>
+  </div>
+</div>
+  <div [ngSwitch]="listaFiltradaPeriferico.length">
+    <div *ngSwitchCase="0">
+      <div class="alert alert-secondary" id="alertNohay" role="alert">
+       No hay perifericos
+      </div>
+    </div>
+    <div *ngSwitchDefault>     
+      <div class="row" id="rowVideojuegos">
+      <div class="col" *ngFor="let item of listaFiltradaPeriferico">
+        <div class="card" style="width: 18rem;">
+          <img [src]="item.imagen|imagenesPipes" class="card-img-top" alt="imagen_vegetal"
+          style="height: 18rem; width: 18rem;">
+            <ul class="list-group list-group-flush">
+            <h3 class="card-title" id="nombrePro">{{item.nombre}}</h3>
+            </ul>
+            <ul>
+            <h3 class="card-text" id="descripcionPro" >{{item.descripcion}}</h3>
+          </ul>  
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item" id="precioPro"><h4>Precio:{{item.precio}}€</h4></li>
+          </ul>
+          <div class="card-body">
+            <button type="button" class="btn btn-primary" style="width: 250px;height: 46px;" (click)="agregarCarrito(item.nombre)">Agregar carrito</button>
+          </div>
+        </div>
+      </div>
+      </div>
+    </div>
+  </div>
+  

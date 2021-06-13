@@ -1,0 +1,101 @@
+#label{
+    font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+    color: white;
+    margin-left: 5px;
+}
+#eleccion{
+    width: 20%;
+    margin-left: 5px;
+}
+#botonPagar,#botonVolver{
+    margin-top: 10px;
+
+}
+#botonVolvere{
+    margin-left: 5px;
+    margin-top:7px;
+}
+#botonPagar{
+    margin-left: 10px;
+}
+#paypalrow,#visarow{
+    color: white;
+    margin-top: 7px;
+    margin-left: 10px;
+}
+#centrarSalir{
+    margin-left: 15px;
+}
+#pagado{
+    margin-left: 10px;
+    margin-top: 10px;
+}
+.form-container{
+    font-family: 95% "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+    max-width: 500px;
+    padding: 16px;
+    margin: 10px auto;
+    background:darkturquoise;
+}
+.form-container h1{
+    background:darkturquoise;
+    padding: 20px 0;
+    font-size: 140%;
+    font-weight: 300;
+    text-align: center;
+    color: #fff;
+    margin: -16px;
+}
+.form-container input[type="text"],
+.form-container input[type="email"]{
+    transition: all 0,30% ease-in-out;
+    outline: none;
+    box-sizing: border-box;
+    width: 100%;
+    background: white;
+    margin-bottom:4%;
+    border:1px solid #ccc;
+    padding: 3%;
+    color: #555;
+    font: 95% "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;;
+}
+.form-container .btn-send{
+    margin-top: 10px;
+    box-sizing:  border-box;
+    width: 100%;
+    padding: 3%;
+    background: #43d1af;
+    border-bottom: 2px solid #30c29e;
+    border-top-style: none;
+    border-right-style: none;
+    color: #fff;
+    border-left-style: none;
+    font-size: 15px;
+}
+.form-container .btn-send:hover:not([disabled]){
+    background: #2ebc99;
+}
+.alert-danger{
+    color:#721c24;
+    background: #f8d7da;
+    border-color: #f5c6cd;
+    margin-bottom: 5px;
+}
+.container-error-message{
+    padding: 3px;
+}
+#alertaTodosTop{
+    margin-top: 14px;
+}
+#ccvPayPalTop{
+    margin-top: 15px !important;
+}
+#ccvVisaTop{
+    margin-top: 13px !important;
+}
+#imagen_pagado{
+    margin-left: 10%;
+}

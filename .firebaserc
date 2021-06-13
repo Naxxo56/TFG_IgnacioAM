@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "default": "tfg-ignacio-arroyo"
+  },
+  "targets": {
+    "tfg-ignacio-arroyo": {
+      "hosting": {
+        "New-Sony": [
+          "tfg-ignacio-arroyo"
+        ]
+      }
+    }
+  }
+}

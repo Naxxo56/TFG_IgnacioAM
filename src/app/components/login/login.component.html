@@ -1,0 +1,49 @@
+<div id="toop" *ngIf="!isSignedIn">
+  <!-- Este NgIf lo usamos para que no nos jorobe toda la pantalla porque estaria todo el rato detras
+     pero ocultado y nos tapa parte del body y por tanto cuando abrimos el mapa  se estropea ya que no puedo coger todo su height y width 
+     y con esto hacemos que se oculte cuando YA ESTA LOGEADO -->
+  <img
+    id="center"
+    src="src\assets\images\logo_new_playstation.png"
+    style="width: 30rem; height: 23rem"
+  />
+  <div id="contenedorLogin" class="row">
+    <div id="iniciar" *ngIf="!isSignedIn">
+      <h1 id="login">
+        <b><i>Bienvenidos a New Sony</i></b>
+      </h1>
+      <div>
+        <input id="inputlogin1" type="text" placeholder="Email" #email>
+      </div>
+      <div>
+        <input
+          id="inputlogin2"
+          type="password"
+          placeholder="Contraseña"
+          #password
+        />
+      </div>
+      <button
+      id="botoneslogin2"
+      class="btn btn-primary"
+      (click)="onSingin(email.value, password.value)"
+    >
+      Iniciar Sesión
+    </button>
+    <br>
+      <button
+        id="botoneslogin1"
+        class="btn btn-primary"
+        (click)="onSignup(email.value, password.value)"
+      >
+        Registrarse
+      </button>
+      
+    </div>
+  </div>
+</div>
+<app-nav-bar *ngIf="isSignedIn"></app-nav-bar>
+<router-outlet></router-outlet>
+
+<!-- <app-nav-bar></app-nav-bar>
+   <router-outlet></router-outlet> -->
